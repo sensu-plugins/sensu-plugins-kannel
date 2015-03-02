@@ -1,18 +1,15 @@
-## Sensu-Plugins-disk-checks
+## Sensu-Plugins-kannel
 
-[![Build Status](https://travis-ci.org/sensu-plugins/sensu-plugins-kannel.svg?branch=master)][1]
-[![Gem Version](https://badge.fury.io/rb/sensu-plugins-kannel.svg)][2]
-[![Code Climate](https://codeclimate.com/github/sensu-plugins/sensu-plugins-kannel/badges/gpa.svg)][3]
-[![Test Coverage](https://codeclimate.com/github/sensu-plugins/sensu-plugins-kannel/badges/coverage.svg)][4]
-[![Dependency Status](https://gemnasium.com/sensu-plugins/sensu-plugins-kannel.svg)][5]
+[![Build Status](https://travis-ci.org/sensu-plugins/sensu-plugins-kannel.svg?branch=master)](https://travis-ci.org/sensu-plugins/sensu-plugins-kannel)
+[![Gem Version](https://badge.fury.io/rb/sensu-plugins-kannel.svg)](http://badge.fury.io/rb/sensu-plugins-kannel)
+[![Code Climate](https://codeclimate.com/github/sensu-plugins/sensu-plugins-kannel/badges/gpa.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-kannel)
+[![Test Coverage](https://codeclimate.com/github/sensu-plugins/sensu-plugins-kannel/badges/coverage.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-kannel)
+[![Dependency Status](https://gemnasium.com/sensu-plugins/sensu-plugins-kannel.svg)](https://gemnasium.com/sensu-plugins/sensu-plugins-kannel)
 
 ## Functionality
 
 ## Files
- *
- *
- *
- *
+ * bin/check-kannel
 
 ## Usage
 
