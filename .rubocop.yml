@@ -22,4 +22,5 @@ IfUnlessModifier:
 
 RegexpLiteral:
     Enabled: false
-
+Metrics/AbcSize:
+  Enabled: false
