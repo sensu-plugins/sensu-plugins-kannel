@@ -26,13 +26,14 @@ Gem::Specification.new do |s|
                                'release_draft'      => 'false',
                                'release_prerelease' => 'false'
                               }
+
   s.name                   = 'sensu-plugins-kannel'
   s.platform               = Gem::Platform::RUBY
   s.post_install_message   = 'You can use the embedded Ruby by setting EMBEDDED_RUBY=true in /etc/default/sensu'
   s.require_paths          = ['lib']
   s.required_ruby_version  = '>= 1.9.3'
   s.signing_key            = File.expand_path(pvt_key) if $PROGRAM_NAME =~ /gem\z/
-  s.summary                = 'Sensu plugins for the apache webserver'
+  s.summary                = 'Sensu plugins for the Kannel WAP/SMS Gateway'
   s.test_files             = s.files.grep(%r{^(test|spec|features)/})
   s.version                = SensuPluginsKannel::Version::VER_STRING
 
