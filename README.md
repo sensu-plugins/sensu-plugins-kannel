@@ -1,6 +1,6 @@
 ## Sensu-Plugins-kannel
 
-[![Build Status](https://travis-ci.org/sensu-plugins/sensu-plugins-kannel.svg?branch=master)](https://travis-ci.org/sensu-plugins/sensu-plugins-kannel)
+[ ![Build Status](https://travis-ci.org/sensu-plugins/sensu-plugins-kannel.svg?branch=master)](https://travis-ci.org/sensu-plugins/sensu-plugins-kannel)
 [![Gem Version](https://badge.fury.io/rb/sensu-plugins-kannel.svg)](http://badge.fury.io/rb/sensu-plugins-kannel)
 [![Code Climate](https://codeclimate.com/github/sensu-plugins/sensu-plugins-kannel/badges/gpa.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-kannel)
 [![Test Coverage](https://codeclimate.com/github/sensu-plugins/sensu-plugins-kannel/badges/coverage.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-kannel)
