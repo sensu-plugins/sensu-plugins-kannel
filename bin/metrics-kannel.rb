@@ -67,29 +67,28 @@ class Graphite < Sensu::Plugin::Metric::CLI::Graphite
     critical 'Invalid XML document' if document.root.nil?
     critical 'Invalid root element' if 'gateway' != document.root.name
     critical 'Denied' if 'Denied' == document.root.text.strip
-    
     list = ['received/total', 'sent/total', 'inbound', 'outbound', 'storesize']
 
-    sms = Hash.new()
+    sms = {}
     list.each do |k|
-         sms["#{k.sub('/', '.')}"] = [REXML::XPath.first(document, "//sms/#{k}/text()")]
+      sms["#{k.sub('/', '.')}"] = [REXML::XPath.first(document, "//sms/#{k}/text()")]
     end
     
     sms.each do |k,v|
-        if k =~ /bound/
-            v = v.join(',').split(',')
-        end
-        v = v.first()
-        output [config[:scheme], k].join('.'), v
+      if k =~ /bound/
+        v = v.join(',').split(',')
+      end
+      v = v.first()
+      output [config[:scheme], k].join('.'), v
     end
     
     smscs = Hash[REXML::XPath.each(document, '//smsc').map do |smsc|
-        output [config[:scheme], smsc.text('id'), 'failed'].join('.'), smsc.text('failed')
-        output [config[:scheme], smsc.text('id'), 'queued'].join('.'), smsc.text('queued')
-        output [config[:scheme], smsc.text('id'), 'received'].join('.'), smsc.text('sms/received')
-        output [config[:scheme], smsc.text('id'), 'sent'].join('.'), smsc.text('sms/sent')
-        output [config[:scheme], smsc.text('id'), 'inbound'].join('.'), smsc.text('sms/inbound').split(',').first
-        output [config[:scheme], smsc.text('id'), 'outbound'].join('.'), smsc.text('sms/outbound').split(',').first
+      output [config[:scheme], smsc.text('id'), 'failed'].join('.'), smsc.text('failed')
+      output [config[:scheme], smsc.text('id'), 'queued'].join('.'), smsc.text('queued')
+      output [config[:scheme], smsc.text('id'), 'received'].join('.'), smsc.text('sms/received')
+      output [config[:scheme], smsc.text('id'), 'sent'].join('.'), smsc.text('sms/sent')
+      output [config[:scheme], smsc.text('id'), 'inbound'].join('.'), smsc.text('sms/inbound').split(',').first
+      output [config[:scheme], smsc.text('id'), 'outbound'].join('.'), smsc.text('sms/outbound').split(',').first
     end]
     ok
 
