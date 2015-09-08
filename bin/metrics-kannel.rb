@@ -73,16 +73,16 @@ class Graphite < Sensu::Plugin::Metric::CLI::Graphite
     list.each do |k|
       sms["#{k.sub('/', '.')}"] = [REXML::XPath.first(document, "//sms/#{k}/text()")]
     end
-    
-    sms.each do |k,v|
+
+    sms.each do |k, v|
       if k =~ /bound/
         v = v.join(',').split(',')
       end
-      v = v.first()
+      v = v.first
       output [config[:scheme], k].join('.'), v
     end
-    
-    smscs = Hash[REXML::XPath.each(document, '//smsc').map do |smsc|
+
+    Hash[REXML::XPath.each(document, '//smsc').map do |smsc|
       output [config[:scheme], smsc.text('id'), 'failed'].join('.'), smsc.text('failed')
       output [config[:scheme], smsc.text('id'), 'queued'].join('.'), smsc.text('queued')
       output [config[:scheme], smsc.text('id'), 'received'].join('.'), smsc.text('sms/received')
@@ -91,6 +91,5 @@ class Graphite < Sensu::Plugin::Metric::CLI::Graphite
       output [config[:scheme], smsc.text('id'), 'outbound'].join('.'), smsc.text('sms/outbound').split(',').first
     end]
     ok
-
   end
 end
