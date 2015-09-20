@@ -11,6 +11,7 @@
 
 ## Files
  * bin/check-kannel.rb
+ * bin/metrics-kannel.rb
 
 ## Usage
 
