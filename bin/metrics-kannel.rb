@@ -52,7 +52,7 @@ class Graphite < Sensu::Plugin::Metric::CLI::Graphite
          description: 'Metric naming scheme, text to prepend to metric',
          short: '-s SCHEME',
          long: '--scheme SCHEME',
-         default: "#{Socket.gethostbyname("#{Socket.gethostname}").first}.kannel"
+         default: "#{Socket.gethostbyname(Socket.gethostname.to_s).first}.kannel"
 
   def run
     path = "/status.xml?password=#{config[:password]}"
@@ -71,7 +71,7 @@ class Graphite < Sensu::Plugin::Metric::CLI::Graphite
 
     sms = {}
     list.each do |k|
-      sms["#{k.sub('/', '.')}"] = [REXML::XPath.first(document, "//sms/#{k}/text()")]
+      sms[k.sub('/', '.').to_s] = [REXML::XPath.first(document, "//sms/#{k}/text()")]
     end
 
     sms.each do |k, v|

@@ -1,19 +1,33 @@
 language: ruby
 cache:
-  - bundler
+- bundler
 install:
-  - bundle install
+- bundle install
 rvm:
-  - 1.9.3
-  - 2.0
-  - 2.1
-  - 2.2
+- 1.9.3
+- 2.0
+- 2.1
+- 2.2
 notifications:
   email:
     recipients:
-      - sensu-plugin@sensu-plugins.io
+    - sensu-plugin@sensu-plugins.io
     on_success: change
     on_failure: always
-
 script:
-  - 'bundle exec rake default'
+- bundle exec rake default
+- gem build sensu-plugins-kannel.gemspec
+- gem install sensu-plugins-kannel-*.gem
+deploy:
+  provider: rubygems
+  api_key:
+    secure: InaHQS5u3yn0l6ZqOFHQh9HuHhUpgt7IwO6D+3hfT3NnutxiW4E+dyX7DGOzNXj1IyYNNR/3gy4SiuFqvqBmfV2GVMRQ+LYAF7/CP9fM9Gb1DuPqwhRbx6wrxkK407MeHRk07xd/eS8Zx1QhqVDu5gLIALHDvQQIGe8Z3jyxCCc=
+  gem: sensu-plugins-kannel
+  on:
+    tags: true
+    all_branches: true
+    rvm: 1.9.3
+    rvm: 2.0
+    rvm: 2.1
+    rvm: 2.2
+    repo: sensu-plugins/sensu-plugins-kannel
