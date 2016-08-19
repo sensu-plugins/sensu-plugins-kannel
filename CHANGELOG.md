@@ -5,8 +5,13 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ## [Unreleased]
 
-## [0.0.4] - 2015-09-14
-- added metrics
+## [0.1.0] - 2016-08-18
+### Changed
+- Updated sensu-plugin dependency from `= 1.2.0` to `~> 1.2.0`
+
+### Added
+- metrics-kannel.rb: new metric plugin added!
+- check-kannel.rb: new option for specifying pattern to match SMSC id
 
 ## [0.0.3] - 2015-07-14
 ### Changed
@@ -22,7 +27,7 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 ### Added
 - initial release
 
-[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-kannel/compare/0.0.4...HEAD
-[0.0.4]: https://github.com/sensu-plugins/sensu-plugins-kannel/compare/0.0.3...0.0.4
+[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-kannel/compare/0.1.0...HEAD
+[0.1.0]: https://github.com/sensu-plugins/sensu-plugins-kannel/compare/0.0.3...0.1.0
 [0.0.3]: https://github.com/sensu-plugins/sensu-plugins-kannel/compare/0.0.2...0.0.3
 [0.0.2]: https://github.com/sensu-plugins/sensu-plugins-kannel/compare/0.0.1...0.0.2
