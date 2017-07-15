@@ -5,7 +5,6 @@ require 'date'
 
 require_relative 'lib/sensu-plugins-kannel'
 
-
 Gem::Specification.new do |s|
   s.authors                = ['Sensu-Plugins and contributors']
   s.date                   = Date.today.to_s
