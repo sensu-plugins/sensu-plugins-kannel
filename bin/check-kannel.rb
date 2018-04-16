@@ -15,7 +15,7 @@
 #   gem: sensu-plugin
 #
 # USAGE:
-#   check-kannel -h host -p port -P password
+#   check-kannel -h host -P port -p password
 #
 # NOTES:
 #

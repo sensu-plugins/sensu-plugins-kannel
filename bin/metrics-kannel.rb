@@ -15,7 +15,7 @@
 #   gem: sensu-plugin
 #
 # USAGE:
-#   metrics-kannel -h host -p port -P password
+#   metrics-kannel -h host -P port -p password
 #
 # NOTES:
 #
