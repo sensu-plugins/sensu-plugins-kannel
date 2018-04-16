@@ -5,6 +5,10 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ## [Unreleased]
 
+## [1.0.1] - 2018-04-16
+## Fixed
+- Fixed USAGE string in both check-kannel.rb and metrics-kannel.rb
+
 ## [1.0.0] - 2017-07-15
 ### Added
 - Ruby 2.3.0 testing
